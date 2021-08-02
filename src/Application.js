@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 class Application extends Component {
 	constructor(props) {
@@ -69,6 +70,7 @@ class Application extends Component {
 					/>
 					<ToDoCompleted items={this.state.done_items} />
 				</div>
+				<AmplifySignOut />
 			</div>
 		);
 	}
@@ -109,4 +111,4 @@ class Application extends Component {
 	}
 }
 
-export default Application
+export default withAuthenticator(Application);
